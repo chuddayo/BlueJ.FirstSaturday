@@ -16,11 +16,14 @@ public class WriteIFsTest
     private static final double _0_5 = 0.5;
     private static final double _0_04 = 0.04;
 
+    private WriteIFs myWrite;
+    
     /**
      * Default constructor for test class WriteIFsTest
      */
     public WriteIFsTest()
     {
+        
     }
 
     /**
@@ -31,6 +34,7 @@ public class WriteIFsTest
     @Before
     public void setUp()
     {
+        myWrite = new WriteIFs();          
     }
 
     /**
@@ -46,17 +50,15 @@ public class WriteIFsTest
     @Test
     public void TestIfs()
     {
-        WriteIFs writeIFs1 = new WriteIFs();
-        writeIFs1.playerDied(true);
-        assertEquals("Game Over!", writeIFs1.ss);
+        myWrite.playerDied(true);
+        assertEquals("Game Over!", myWrite.ss);
     }
 
 
     @Test
     public void TestTherm()
     {
-        WriteIFs writeIFs1 = new WriteIFs();
-        assertEquals("heating", writeIFs1.thermoSTAT(62));
+        assertEquals("heating", myWrite.thermoSTAT(62));
     }
     @Test
     public void TestTherm1()
